@@ -2,5 +2,5 @@
     "DbServer" : "localhost",
     "DbUserName" : "root",
     "DbPassword"  : "",
-    "Database": "test"
+    "Database": "schoolmanagementsystem"
 }

@@ -1,7 +1,7 @@
 'use strict'
 
 const mysql = require("mysql");
-const dbConfig = require("../utility/app.config.json");
+const dbConfig = require("../utility/config.json");
 
 // Create a connection to the database
 const context = mysql.createConnection({
