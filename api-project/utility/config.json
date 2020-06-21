@@ -1,0 +1,6 @@
+{
+    "DbServer" : "localhost",
+    "DbUserName" : "root",
+    "DbPassword"  : "",
+    "Database": "test"
+}
