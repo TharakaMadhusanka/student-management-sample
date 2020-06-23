@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var schoolController = require('../controller/school.controller');
+const { HttpError } = require('http-errors');
 
 /* GET All Schools listing. */
 router.get('/', 
@@ -15,6 +16,8 @@ router.get('/',
         catch (error) 
         {
             console.log(error);
+            response.statusCode = 500;
+            response.statusMessage = "Internal server error.";
             next();
         }
     });
