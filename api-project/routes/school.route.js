@@ -10,8 +10,7 @@ router.get('/',
 
         try 
         {
-            console.log(_req.body);
-            response.send( await schoolController.GetListOfSchools());
+            response.send( await schoolController.GetListOfSchools(_req));
         }
         catch (error) 
         {
