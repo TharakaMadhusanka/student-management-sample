@@ -16,9 +16,7 @@ router.get('/',
         catch (error) 
         {
             console.log(error);
-            response.statusCode = 500;
-            response.statusMessage = "Internal server error.";
-            next();
+            next(error);
         }
     });
 

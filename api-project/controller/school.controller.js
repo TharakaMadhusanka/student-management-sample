@@ -19,7 +19,7 @@ exports.GetListOfSchools = async (_req, _res) => {
     }
     catch(error) {
         console.log(error);
-        throw error;
+        throw new Error(error);
         
     }
 }
