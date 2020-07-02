@@ -20,4 +20,21 @@ router.get('/',
         }
     });
 
+// Insert, Update, Delete School
+router.post('/updateschool', 
+    
+    async (_req,response, next) => 
+    {
+
+        try 
+        {
+            response.send( await schoolController.UpdateSchool(_req));
+        }
+        catch (error) 
+        {
+            console.log(error);
+            next(error);
+        }
+    });
+
 module.exports = router;

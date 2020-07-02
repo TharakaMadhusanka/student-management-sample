@@ -1,6 +1,7 @@
 'use strict'
 var config = require('../utility/config');
 var contextService = require('../service/connectdb.service');
+const { request } = require('../app');
 
 
 // Method to Get List Of Schools
@@ -32,12 +33,19 @@ exports.GetListOfSchools = async (_req, _res) => {
 exports.UpdateSchool = async (_req, _res) => {
     try 
     {
-        listOfRecords = await contextService.ExecuteQuery('CALL GetListOfSchools(' 
-                                + limit + ',' 
-                                + offSet + ',"'
-                                + searchFor + '")');
-        
-        return listOfRecords[0];
+        let requestBody = _req.body;
+        let response = await contextService.ExecuteQuery(' CALL UpdateSchool("' + 
+               requestBody.SchoolName + '","' +
+               requestBody.Street + '","' + 
+               requestBody.Suburb + '",' + 
+               parseInt(requestBody.StateId) + ',' +
+               parseInt(requestBody.PostCode) + ',' +
+               parseInt(requestBody.NoOfRegisteredStudents) + ',' + 
+               parseInt(requestBody.Type) + ',' +
+               parseInt (requestBody.SchoolId) + ')'
+        );
+
+        return response;
     }
     catch(error) {
         console.log(error);
