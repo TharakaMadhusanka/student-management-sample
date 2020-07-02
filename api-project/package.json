@@ -2,6 +2,7 @@
   "name": "api-project",
   "version": "1.0.0",
   "private": true,
+  "main": "node ./bin/www",
   "scripts": {
     "start": "node ./bin/www"
   },
